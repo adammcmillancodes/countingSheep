@@ -1,0 +1,611 @@
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:700;}dfn{font-style:italic;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}pre{white-space:pre-wrap;word-wrap:break-word;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,html input[type=button],/* 1 */input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}body,figure{margin:0;}legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
+
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+html, body {
+  font-size: 62.5%;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* COLOUR VARIABLES*/
+
+:root {
+  --rubine: #C40058;
+  --gravy: #243746;
+  --mint-green: #C9DED9;
+}
+
+/* TYPOGRAPHY */
+
+h1, h2, h3, h4, h5, p, a, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+  font-family: 'Merriweather', serif;
+}
+
+h4, .h4, h5, .h5, p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+}
+
+.display {
+  font-size: 57px;
+  font-size: 5.7rem;
+}
+
+h1, .h1 {
+  font-size: 47px;
+  font-size: 4.7rem;
+}
+
+h2, .h2 {
+  font-size: 39px;
+  font-size: 3.9rem;
+}
+
+h3, .h3 {
+  font-size: 32px;
+  font-size: 3.2rem;
+}
+
+h4, .h4 {
+  font-size: 27px;
+  font-size: 2.7rem;
+}
+
+h5, .h5 {
+  font-size: 22px;
+  font-size: 2.2rem;
+}
+
+p {
+  font-size: 19px;
+  font-size: 1.9rem;
+}
+
+.small {
+  font-size: 16px;
+  font-size: 1.6rem;
+}
+
+.micro {
+  font-size: 13px;
+  font-size: 1.3rem;
+}
+
+/* MODAL STYLES */
+.modalContainer {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+
+.modal {
+  width: 583px;
+  height: 367px;
+  margin: auto;
+  background-image: url(../assets/endy-pop-up-lifestyle-200x367-2x.jpg);
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+}
+
+.exitButton {
+  background: transparent;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.modalCopy {
+  width: 65.5%;
+  padding: 29px 49px;
+  margin-left: auto;
+  background-color: #c9ded9;
+  text-align: center;
+  color: var(--gravy);  
+  max-height: 100%;
+}
+
+.modalCopy .banner {
+  margin-bottom: 7px;
+}
+
+.modalCopy h3 {
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgba(36, 55, 70, 0.5);
+  margin-bottom: 16px;
+}
+
+.modalCopy p {
+  margin-bottom: 28px;
+}
+
+.modalCopy a {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: var(--rubine);
+  padding: 16px 20px;
+  border-radius: 2px;
+}
+
+/* HEADER STYLES */
+
+/* PENCIL BANNER STYLES */
+
+.pencilMessage {
+  background: var(--gravy);
+  padding: 13px 20px 23px 20%;
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  border: 1px solid #979797;
+}
+
+.pencilCopy {
+  color: white;
+  padding-right: 10px;
+  font-weight: bold;
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+.translate {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* NAVIGATION STYLES */
+
+.navWrap {
+  box-shadow: rgba(0, 0, 0, 0.5) 0 2px 4px 0;
+  padding: 0 55px;
+  max-height: 60px;
+}
+
+nav a {
+  color: var(--gravy);
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.03px;
+  display: inline-block;
+}
+
+nav .small {
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+nav a:hover, nav a:focus {
+  color: var(--rubine);
+}
+
+.megaMenu {
+  display: flex;
+  align-items: center;
+}
+
+.navMenuLeft, .navMenuRight {
+  width: calc(50% - (132px / 2));
+}
+
+.navMenuCenter {
+  width: 132px;
+}
+
+.desktopMenu {
+  display: flex;
+  align-items: center;
+}
+
+ul.mobileMenu {
+  display: none;
+}
+
+.mobileMenu button {
+  border: none;
+  background: transparent;
+}
+
+.desktopMenu li {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+li.logo {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.logo a {
+  padding: 0;
+  display: block;
+}
+
+.logo img {
+  box-shadow: rgba(0, 0, 0, 0.5) 0 2px 4px;
+  object-fit: cover;
+  height: 100%;
+}
+
+.navMenuLeft li a {
+  padding: 15px 30px;
+}
+
+.navMenuRight ul li{
+  text-align:right;
+}
+
+/* HERO STYLES */
+
+.hero {
+  background-image: url(../assets/endy-dreamiest-offer-ever-sale-hero-1440x645-2x.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: 32px;
+  padding-bottom: 16px;
+}
+
+.wrapper {
+  width: 80%;
+  max-width: 750px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.copyBlock {
+  text-align: center;
+}
+
+.banner {
+  display: inline-block;
+  background: var(--gravy);
+  color: white;
+  text-transform: uppercase;
+  padding: 9px;
+  position: relative;
+  margin-bottom: 20px;
+  border-radius: 2px;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 17px solid transparent;
+  border-right: 10px solid var(--gravy);
+  border-bottom: 17px solid transparent;
+  left: -9px;
+  top: 0;
+}
+
+.banner::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 17px solid transparent;
+  border-left: 10px solid var(--gravy);
+  border-bottom: 17px solid transparent;
+  right: -9px;
+  top: 0;
+}
+
+.copyBlock h1 {
+  color: var(--gravy);
+  text-transform: capitalize;
+  margin-bottom: 23px;
+}
+
+.copyBlock h2 {
+  color: var(--gravy);
+  letter-spacing: -0.01px;
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+
+.copyBlock a {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: var(--rubine);
+  padding: 18px 29px;
+  border-radius: 2px;
+  margin-bottom: 372px;
+}
+
+.expiryBadge {
+  border-radius: 50%;
+  width: 109px;
+  height: 109px;
+  border: 3px solid var(--gravy);
+  padding: 3px;
+  position: absolute;
+  bottom: 15%;
+  right: 3%;
+}
+
+.expiryBadge p {
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+  background: var(--gravy);
+  padding: 5px;
+  width: 100%;
+  height: 100%;
+  text-transform: uppercase;
+  transform: rotate(15deg);
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.legal {
+  text-align: center;
+}
+
+.legal p, .legal a {
+  color: white;
+  font-size: 12px;
+  letter-spacing: 0.04px;
+}
+
+.legal a {
+  text-decoration: none;
+  padding: 5px 0;
+  border-bottom: 1px solid white;
+  white-space: nowrap;
+}
+
+/* MEDIA QUERIES FOR NAV FONTS AND HERO BACKGROUND*/
+
+@media (max-width: 1330px) {
+  nav .small {
+    font-size: 15px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 1260px) {
+  nav .small {
+    font-size: 14px;
+    font-size: 1.4rem;
+  }
+  .navMenuLeft li a{
+    padding: 15px;
+  }
+}
+
+@media (max-width: 1180px) {
+  nav .small {
+    font-size: 13px;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 1024px){
+  .hero {
+    background-image: url(../assets/endy-dreamiest-offer-ever-sale-hero-1024x645-2x.jpg);
+  }
+  .expiryBadge {
+    right: 13%;
+  }
+}
+
+@media (max-width: 1000px){
+  .navWrap {
+    padding: 0 20px;
+  }
+  nav .small {
+    font-size: 12px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 885px){
+  .navMenuLeft li a {
+    padding-left: 0;
+    padding-right: 10px;
+  }
+  .expiryBadge {
+    right: 10%;
+  }
+}
+
+/* STYLES FOR TABLET SIZED DEVICES */
+
+@media (max-width: 768px) {
+  /* FONT SIZES */
+  .display {
+    font-size: 48px;
+    font-size: 4.8rem;
+  }
+
+  h1, .h1 {
+    font-size: 40px;
+    font-size: 4.0rem;
+  }
+
+  h2, .h2 {
+    font-size: 33px;
+    font-size: 3.3rem;
+  }
+
+  h3, .h3 {
+    font-size: 27px;
+    font-size: 2.7rem;
+  }
+
+  h4, .h4 {
+    font-size: 23px;
+    font-size: 2.3rem;
+  }
+
+  h5, .h5 {
+    font-size: 19px;
+    font-size: 1.9rem;
+  }
+
+  p {
+    font-size: 16px;
+    font-size: 1.6rem;
+  }
+
+  .small {
+    font-size: 13px;
+    font-size: 1.3rem;
+  }
+
+  .micro {
+    font-size: 11px;
+    font-size: 1.1rem;
+  }
+
+  /* HEADER STYLES */
+
+  .pencilMessage {
+    padding: 14px 65px 20px 65px;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .navWrap {
+    padding: 0 11%;
+  }
+
+  .translate {
+    display: none;
+  }
+
+  .desktopMenu {
+    display: none;
+  }
+  ul.mobileMenu {
+    display: flex;
+  }
+  .navMenuRight .mobileMenu {
+    justify-content: flex-end;
+  }
+
+  .wrapper {
+    max-width: 618px;
+  }
+
+  .hero {
+    background-image: url(../assets/endy-dreamiest-offer-ever-sale-hero-768x600-2x.jpg);
+  }
+
+  .banner::before, .banner::after {
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+  }
+
+  .copyBlock h1 {
+    margin-bottom: 27px;
+  }
+
+  .copyBlock h2 {
+    margin-bottom: 28px;
+    font-weight: normal;
+  }
+
+  .copyBlock a {
+    width: 100%;
+    margin-bottom: 353px;
+  }
+
+  .expiryBadge {
+    transform: rotate(-30deg);
+    width: 99px;
+    height: 99px;
+    right: auto;
+    left: 14%;
+    bottom: 8%;
+  }
+
+  .expiryBadge .small {
+    font-weight: normal;
+  }
+
+  .legal p, .legal a {
+    font-size: 1.0rem;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 630px) {
+  .expiryBadge {
+    left: 5%;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero {
+    background-image: url(../assets/endy-dreamiest-offer-ever-sale-hero-500X600-2x.jpg)
+  }
+}
+
+@media (max-width: 375px) {
+  .navWrap {
+    padding: 0 30px;
+  }
+  .pencilMessage {
+    padding: 13px 13px 20px 13px;
+    text-align: center;
+  }
+  .pencilCopy {
+    font-weight: normal;
+  }
+
+  .hero {
+    background-image: url(../assets/endy-dreamiest-offer-ever-sale-hero-375x600-2x.jpg)
+  }
+
+  .wrapper {
+    width: 88%;
+    max-width: 330px;
+    margin: 0 auto;
+  }
+
+  .expiryBadge {
+    bottom: 13%;
+    left: 0;
+  }
+} 
